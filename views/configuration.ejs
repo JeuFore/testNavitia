@@ -1,0 +1,20 @@
+<div data-ng-controller="ZwaveCtrl as vm">
+    <div class="box skin-box box-default no-border ng-cloak">
+        <div class="box-header with-border">
+            <h3 class="box-title">{{ 'NODES' | translate}}</h3>
+            <div class="box-tools pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary btn-flat btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{ 'NETWORK_MANAGEMENT' | translate }}</button>
+                    <ul class="dropdown-menu" role="menu">
+                    <li><a href="" ng-click="vm.addNode()" data-toggle="modal" data-target=".zwave-inclusionModal">{{ 'INCLUDE_NODE' | translate }}</a></li>
+                    <li><a href="" ng-click="vm.removeNode()" data-toggle="modal" data-target=".zwave-exclusionModal">{{ 'EXCLUDE_NODE' | translate }}</a></li>
+                    <li><a href="" ng-click="vm.healNetwork()">{{ 'HEAL_NETWORK' | translate }}</a></li>
+                    <li class="divider"></li>
+                    <li><a href="" ng-click="vm.getPorts()" data-toggle="modal" data-target=".zwave-initializePort">{{ 'CONFIGURE_CONTROLLER' | translate }}</a></li>
+                    <li><a href="" ng-click="vm.softReset()">{{ 'RESTART_CONTROLLER' | translate }}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

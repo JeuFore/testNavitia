@@ -1,23 +1,25 @@
-<script src="/hooks/zwave/lib/AutoWakeUp.js"></script>
 
-<div data-ng-controller="ZwaveCtrl as vm">
-    <div class="box skin-box box-default no-border ng-cloak">
-        <div class="box-header with-border">
-            <h3 class="box-title">Réglage AutoWakeUp</h3>
+<html lang="en">
+    <head>
+     <% include partials/head %> 
+    </head>
+    <body>
+    <% include partials/menu %>
+    <div class="container-fluid bg-3 text-center">    
+      <h3><%= page %></h3><br>
+      <div class="row">
+        <div class="col-sm-4">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          
         </div>
-        <div class="box-body">
-
-            <div ng-show="vm.nodesIsEmpty">
-                <h4 class="text-center" style="padding: 20px">{{depart}}</h4>
-            </div>
-
-            <div class="row" ng-show="!vm.nodesReady && !vm.nodesIsEmpty">
-                <div class="col-centered col-md-4 col-md-offset-4">
-                    <div class="spinner-box">
-                        <div class="spinner">
-                            <div class="double-bounce1"></div>
-                            <div class="double-bounce2"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col-sm-4"> 
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="col-sm-4"> 
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div>
+    </body>
+    <% include partials/script %>
+    </html>

@@ -1,12 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
-
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
-
-</body>
-</html>
+<div id="search" data-ng-controller="BrainCtrl as vm">
+    <!-- <button type="button" class="close">×</button> -->
+     <form>
+         <input id="searchInput" type="search" ng-model="vm.text" ng-keypress="$event.keyCode == 13 && vm.classify(vm.text)"  value="" placeholder="<%= __('search-placeholder') %>" autocomplete="off" />
+         <img onclick="MA_FONCTION()" src="../mon_image.jpg" />
+        <!-- <button type="submit" class="btn btn-primary">Search</button>-->
+     </form>
+     <p id="searchResult" ng-model="vm.answer"></p>
+ </div>
+ 
+ <script>
+ document.onkeydown = keydown;
+ 
+ function keydown(evt){
+   if (evt.ctrlKey && evt.keyCode == 32){ //CTRL+ALT+F4
+     var search = document.getElementById('search');
+     search.className = 'open';
+     document.getElementById('searchInput').focus();
+   } else if (evt.keyCode == 27) {
+       var search = document.getElementById('search');
+       search.className = '';
+       document.getElementById('searchInput').blur();
+   }
+ }    
+    function MA_FONCTION() {
+ 
+         //do something
+ 
+         }
+ 
+     </script>

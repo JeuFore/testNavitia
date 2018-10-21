@@ -7,6 +7,9 @@
 <button type="button" onclick="myFunction()">Try it</button>
 
 <script>
+const Promise = require('bluebird');
+var request = require('request');
+
 function myFunction() {
     gladys.location.getUser({id: 1})
 	.then((location) => {			

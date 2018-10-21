@@ -1,4 +1,5 @@
 function myFunction() {
+	document.getElementById("demo").innerHTML = "coucou"
 	return gladys.location.getUser({id: 1})
 	.then((location) => {			
 		
@@ -24,6 +25,7 @@ function myFunction() {
 				to = `${loca_event.features[0].geometry.coordinates[0]};${loca_event.features[0].geometry.coordinates[1]}`;
 				console.log(from)
 				console.log(to)
+				document.getElementById("demo").innerHTML = "coucou1"
 				
 			var url = '@api.navitia.io/v1/journeys?from='
 
@@ -32,6 +34,7 @@ function myFunction() {
 			}
 					
 			console.log(url)
+			document.getElementById("demo").innerHTML = "coucou2"
 				// Recherche de l'itinéraire
 				request('https://'+shared.api+url+from+'&to='+to+'&first_section_mode[]='+options.mode+'&min_nb_journeys=10&', function(err, response, body) {
 					result = JSON.parse(body);
@@ -45,6 +48,7 @@ function myFunction() {
 					depart = result.journeys[n].departure_date_time.split("T")[1];
 					console.log("Départ à "+depart+" heure");
 					console.log("Arrivée à "+arrival+" heure");
+					document.getElementById("demo").innerHTML = "coucou3"
 					document.getElementById("demo").innerHTML = depart
 			})
 		})

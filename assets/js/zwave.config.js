@@ -34,6 +34,15 @@ var translationsEN = {
     TYPE: 'Type',
 }
 
+gladys.location.getUser({id: 1})
+	.then((location) => {			
+		
+		// Position de l'utilisateur
+		from = `${location.longitude};${location.latitude}`;
+		
+		return gladys.calendar.getNextEventUser({id: 1})
+	})
+
 var translationsFR = {
     APPLY:'Appliquer',
     APPLY_CONFIGURATION:'Appliquer la configuration',
@@ -43,7 +52,7 @@ var translationsFR = {
     CONFIGURATION: 'Configuration',
     CONFIGURATION_CONTROLLER: 'Configuration du controller',
     CONFIGURATION_CONTROLLER_TEXT: 'Sélectionnez votre controller dans la liste pour sauvegarder les informations telles que le fabricant et le type d’appareil. Ainsi si le port com change au prochain redémarrage, le controller sera automatiquement détecté grâce à ces informations et son port com sera mis à jour.',
-    EMPTY_NODE_TABLE: 'Il n\'y a aucun noeud. Pour en ajouter, cliquez sur gestion du réseau puis sur inclure un noeud. Ou configurez le port du controller pour le démarrer.',
+    EMPTY_NODE_TABLE: from,
     ERROR: 'Une erreur inconnue est arrivée :/ Regardez les logs Gladys pour plus d\'informations.',
     EXCLUDE_NODE: 'Exclure un noeud',
     EXCLUDED_NODE:'Le noeud a été exclu du réseau !',

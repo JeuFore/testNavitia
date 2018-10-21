@@ -1,5 +1,4 @@
 function myFunction() {
-	document.getElementById("demo").innerHTML = "coucou"
 	return gladys.location.getUser({id: 1})
 	.then((location) => {			
 		

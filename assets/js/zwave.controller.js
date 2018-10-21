@@ -1,10 +1,27 @@
+/** 
+  * Gladys Project
+  * http://gladysproject.com
+  * Software under licence Creative Commons 3.0 France 
+  * http://creativecommons.org/licenses/by-nc-sa/3.0/fr/
+  * You may not use this software for commercial purposes.
+  * @author :: Mathieu Andrade
+  */
 const shared = require('./shared.js');
 const Promise = require('bluebird');
 var request = require('request');
+    
+ (function () {
+    'use strict';
 
-module.exports = function get(options) {
-	
-	return gladys.location.getUser({id: 1})
+    angular
+        .module('gladys')
+        .controller('ZwaveCtrl', ZwaveCtrl);
+
+    ZwaveCtrl.$inject = ['zwaveService', '$scope'];
+
+    function ZwaveCtrl(zwaveService, $scope) {
+        /* jshint validthis: true */
+        return gladys.location.getUser({id: 1})
 	.then((location) => {			
 		
 		// Position de l'utilisateur
@@ -29,6 +46,11 @@ module.exports = function get(options) {
 				to = `${loca_event.features[0].geometry.coordinates[0]};${loca_event.features[0].geometry.coordinates[1]}`;
 				console.log(from)
 				console.log(to)
+
+				var options = {
+					coverage : 'sncf',
+					mode : 'bike'
+				};
 				
 			var url = '@api.navitia.io/v1/journeys?from='
 
@@ -51,7 +73,8 @@ module.exports = function get(options) {
 					console.log("Départ à "+depart+" heure");
 					console.log("Arrivée à "+arrival+" heure");
 					return depart
-			})
-		})
-	})
-}		
+		        	})
+	        	})
+           })
+        }
+})();

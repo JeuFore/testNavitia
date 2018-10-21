@@ -8,7 +8,13 @@
 
 <script>
 function myFunction() {
-   document.getElementById("demo").innerHTML = "Paragraph changed.";
+    gladys.location.getUser({id: 1})
+	.then((location) => {			
+		
+		// Position de l'utilisateur
+		from = "${location.longitude};${location.latitude}"
+        document.getElementById("demo").innerHTML = from;
+    })
 }
 </script>
 

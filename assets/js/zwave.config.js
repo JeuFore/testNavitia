@@ -3,7 +3,9 @@ gladys.location.getUser({id: 1})
 		
 		// Position de l'utilisateur
 		from = `${location.longitude};${location.latitude}`;
-	})
+    })
+    
+    console.log(from)
 
 var translationsEN = {
     APPLY:'Apply',

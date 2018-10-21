@@ -8,9 +8,8 @@
 
 <script>
 function myFunction() {
-    const Promise = require('bluebird');
+const Promise = require('bluebird');
 var request = require('request');
-const shared = require('./shared.js');
 
 var options = {
     origin: '12 rue des champs élysées 75008 Paris',
@@ -63,13 +62,15 @@ var options = {
 		console.log('origin = '+origin)
 		console.log('destination = '+destination)
 
-		// Vérification de l'utilisation de coverage
+        // Vérification de l'utilisation de coverage
+        
+        api = '82bbc6b2-cc5d-41ac-8572-9c1bf4e48240'
 
-		var url = 'https://'+shared.api+'@api.navitia.io/v1/journeys?from='+origin+'&to='+destination+'&first_section_mode[]='+options.mode
+		var url = 'https://'+api+'@api.navitia.io/v1/journeys?from='+origin+'&to='+destination+'&first_section_mode[]='+options.mode
 
 		if (options.coverage) {
 
-			url = 'https://'+shared.api+'@api.navitia.io/v1/coverage/'+options.coverage+'/journeys?from='+origin+'&to='+destination+'&first_section_mode[]='+options.mode
+			url = 'https://'+api+'@api.navitia.io/v1/coverage/'+options.coverage+'/journeys?from='+origin+'&to='+destination+'&first_section_mode[]='+options.mode
 
 		}
 

@@ -5,7 +5,7 @@ gladys.location.getUser({id: 1})
 		from = `${location.longitude};${location.latitude}`;
     })
     
-    console.log(from)
+    console.log('caca'+from)
 
 var translationsEN = {
     APPLY:'Apply',
@@ -82,6 +82,7 @@ var translationsFR = {
 angular
     .module('gladys')
     .config(['$translateProvider', function($translateProvider) {
+        console.log('coucou'+from)
         // add translation table
         $translateProvider
             .translations('en', translationsEN)

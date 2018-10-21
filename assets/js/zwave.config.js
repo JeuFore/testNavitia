@@ -14,7 +14,7 @@ var translationsEN = {
     CONFIGURATION_CONTROLLER_TEXT: 'Select your controller from the list to save information such as manufacturer and device type. So if the com port change after a restart, the controller will automatically be called and its com port will be updated.',
     CONFIGURATION: 'Configuration',    
     CONFIGURATION_CONTROLLER: 'Configuration\'s controller',
-    EMPTY_NODE_TABLE: 'There is no node. To add one, click network management and then include a node. Or configure controller\'s port for start it.',
+    EMPTY_NODE_TABLE: from,
     ERROR: 'Something bad happened :/ Check Gladys logs for more informations.',
     EXCLUDE_NODE: 'Exclude a node',
     EXCLUDED_NODE:'The node has been excluded from the network !',

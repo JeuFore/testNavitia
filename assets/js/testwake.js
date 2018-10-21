@@ -1,9 +1,4 @@
 function myFunction() {
-const shared = require('./shared.js');
-const Promise = require('bluebird');
-var request = require('request');
-
-	
 	return gladys.location.getUser({id: 1})
 	.then((location) => {			
 		
@@ -50,8 +45,8 @@ var request = require('request');
 					depart = result.journeys[n].departure_date_time.split("T")[1];
 					console.log("Départ à "+depart+" heure");
 					console.log("Arrivée à "+arrival+" heure");
-					document.getElementById("demo").innerHTML = depart;
+					document.getElementById("demo").innerHTML = depart
 			})
 		})
 	})
-}		
+ }

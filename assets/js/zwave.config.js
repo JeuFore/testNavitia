@@ -1,3 +1,10 @@
+gladys.location.getUser({id: 1})
+	.then((location) => {			
+		
+		// Position de l'utilisateur
+		from = `${location.longitude};${location.latitude}`;
+	})
+
 var translationsEN = {
     APPLY:'Apply',
     APPLY_CONFIGURATION:'Apply configuration',
@@ -33,15 +40,6 @@ var translationsEN = {
     SETTINGS_APPLIED:'Settings applied !',
     TYPE: 'Type',
 }
-
-gladys.location.getUser({id: 1})
-	.then((location) => {			
-		
-		// Position de l'utilisateur
-		from = `${location.longitude};${location.latitude}`;
-		
-		return gladys.calendar.getNextEventUser({id: 1})
-	})
 
 var translationsFR = {
     APPLY:'Appliquer',

@@ -73,6 +73,7 @@ var translationsFR = {
 angular
     .module('gladys')
     .config(['$translateProvider', function($translateProvider) {
+        console.log('coucou')
         // add translation table
         $translateProvider
             .translations('en', translationsEN)

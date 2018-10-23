@@ -13,7 +13,7 @@ const theUrl = 'https://82bbc6b2-cc5d-41ac-8572-9c1bf4e48240@api.navitia.io/v1/j
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
 	xmlHttp.send( null );
-	document.getElementById("demo").innerHTML = "Paragraph changed.";
+	document.getElementById("demo").innerHTML = xmlHttp.responseText;
 	return xmlHttp.responseText;
 	
  }

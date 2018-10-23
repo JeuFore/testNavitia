@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <title>navitia playground</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/vendor.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="icon" href="img/favicon.ico">
@@ -42,13 +41,19 @@
             <div id="credentials">
               <div id="api" class="inputDiv">
                 <span class="key">API</span>
-                <input placeholder="API" type="url" autocomplete="off" class="api" onfocus="request.updateUrl(this)" oninput="request.updateUrl(this)">
+                <input placeholder="API"
+                       type="url"
+                       autocomplete="off"
+                       class="api"
+                       onfocus="request.updateUrl(this)"
+                       oninput="request.updateUrl(this)">
               </div>
               <div id="token" class="inputDiv">
                 <span class="key">Token</span>
                 <input placeholder="Token" type="password" autocomplete="off" class="token">
                 <button class="save" onclick="storage.saveTokenFromRequest()">
-                  <img class="saveButton" src="img/save.svg" alt="save token" title="save token">
+                  <img class="saveButton" src="img/save.svg"
+                       alt="save token" title="save token">
                 </button>
               </div>
             </div>
@@ -57,11 +62,20 @@
             <h3>Build your path</h3>
             <div id="path">
               <div id="addPathElt" class="inputDiv">
-                <input id="addPathInput" class="addInput" type="text" autocomplete="off" placeholder="type a key to add a path element">
+                <input id="addPathInput"
+                       class="addInput"
+                       type="text"
+                       autocomplete="off"
+                       placeholder="type a key to add a path element">
                 <button class="add" onclick="request.insertPathElt()">Add</button>
               </div>
               <div id="feature" class="inputDiv">
-                <input id="featureInput" type="text" autocomplete="off" onfocus="request.updateUrl(this)" oninput="request.updateUrl(this)" placeholder="empty feature">
+                <input id="featureInput"
+                       type="text"
+                       autocomplete="off"
+                       onfocus="request.updateUrl(this)"
+                       oninput="request.updateUrl(this)"
+                       placeholder="empty feature">
               </div>
             </div>
           </div><!-- pathFrame -->
@@ -69,7 +83,11 @@
             <h3>Add parameters</h3>
             <div id="parameters">
               <div id="addParam" class="inputDiv">
-                <input id="addParamInput" class="addInput" type="text" autocomplete="off" placeholder="type a key to add a parameter">
+                <input id="addParamInput"
+                       class="addInput"
+                       type="text"
+                       autocomplete="off"
+                       placeholder="type a key to add a parameter">
                 <button class="add" onclick="request.insertParam()">Add</button>
               </div>
             </div>
@@ -88,7 +106,7 @@
         </div><!-- hContainer -->
       </div><!-- request-->
 
-      <hr>
+      <hr/>
 
       <div id="response"><!-- response -->
         <div class="hContainer">

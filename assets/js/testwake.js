@@ -1,11 +1,4 @@
-var Promise = require('bluebird');
-var request = require('request');
-
 function myFunction() {
-	if (1 == 1) {
-		document.getElementById("demo").innerHTML = "coucou"
-
-}
 document.getElementById("demo").innerHTML = "bruhh"
 
 const theUrl = "https://api.navitia.io/v1/journeys?from=2.3083896;48.8660048&to=2.301053;48.881376&first_section_mode[]=car"

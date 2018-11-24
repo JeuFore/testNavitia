@@ -1,4 +1,5 @@
 // Accès à la météo de Lyon avec la clé d'accès 50a65432f17cf542
+var meteoElt = document.getElementById("meteo");
 ajaxGet("http://api.wunderground.com/api/116a39e0996062af/conditions/q/France/Lyon.json", function (reponse) {
     var meteo = JSON.parse(reponse);
     // Récupération de certains résultats

@@ -11,7 +11,6 @@ const theUrl = "https://82bbc6b2-cc5d-41ac-8572-9c1bf4e48240@api.navitia.io/v1/j
 
 var http = new XMLHttpRequest();
 http.open( "GET", theUrl); // false for synchronous request
-http.send();
 http.onload = () => document.getElementById("demo").innerHTML = http.responseText;
 </script>
 

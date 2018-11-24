@@ -1,18 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<body> 
 
-<h1>A Web Page</h1>
-<p id="demo">A Paragraph</p>
-<button type="button" onclick="myFunction()">Try it</button>
+<head>
+    <meta charset="utf-8">
+    <title>Utiliser des API</title>
+</head>
 
-<script>
-const theUrl = "https://82bbc6b2-cc5d-41ac-8572-9c1bf4e48240@api.navitia.io/v1/journeys?from=2.3083896;48.8660048&to=2.301053;48.881376&first_section_mode[]=car"
+<body>
+    <h1>Derniers articles</h1>
+    <div id="articles">
+    </div>
 
-var http = new XMLHttpRequest();
-http.open( "GET", theUrl); // false for synchronous request
-http.onload = () => document.getElementById("demo").innerHTML = http.responseText;
-</script>
+    <h1>Le Premier Ministre</h1>
+    <div id="premMin">
+    </div>
 
+    <h1>La météo à Lyon</h1>
+    <div id="meteo"></div>
+
+    <script src="../js/ajax.js"></script>
+    <script src="../js/cours.js"></script>
 </body>
+
 </html>

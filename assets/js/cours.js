@@ -19,7 +19,7 @@ ajaxGet("https://www.data.gouv.fr/api/1/organizations/premier-ministre/", functi
     var premierMinistre = JSON.parse(reponse);
     // Ajout de la description et du logo dans la page web
     var descriptionElt = document.createElement("p");
-    descriptionElt.textContent = premierMinistre.metrics.dataset_views;
+    descriptionElt.textContent = premierMinistre.badges[0].kind;
     var logoElt = document.createElement("img");
     logoElt.src = premierMinistre.logo;
     premMinElt.appendChild(descriptionElt);

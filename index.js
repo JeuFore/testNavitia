@@ -10,6 +10,7 @@ module.exports = function (sails) {
     });
     
     return {
+        test,
         exec,
         AutoWakeUp,
     };

@@ -1,34 +1,98 @@
-<!DOCTYPE html>
-<html>
-<body>
+<script src="/hooks/alexa/js/alexa.config.js"></script>
+<script src="/hooks/alexa/js/alexa.service.js"></script>
+<script src="/hooks/alexa/js/alexa.controller.js"></script>
 
-<p>Click the button to extract characters from the string.</p>
+<div data-ng-controller="alexaCtrl as vm">
+  <div class="row" ng-show="!vm.ready">
+    <div class="col-centered col-md-6 col-md-offset-6">
+      <div class="spinner-box">
+        <div class="spinner">
+          <div class="double-bounce1"></div>
+          <div class="double-bounce2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" ng-show="vm.ready" ng-cloak>
+    <div class="col-centered col-md-12">
+      <button class="btn btn-flat btn-primary margin" ng-click="vm.saveConfig()"><i class="fa fa-save"></i> {{ 'SAVE_SETTINGS' |
+        translate }}</button>
+      <button class="btn btn-flat btn-primary margin" data-toggle="modal" data-target=".alexa-help"><i class="fa fa-info-circle"></i> {{ 'HELP_ALEXA' |
+        translate }}</button>
 
-<button onclick="myFunction()">Try it</button>
+      <div class="form-inline" style="display: inline">
+        <label for="selectLibrary">{{ 'SELECT_LIBRARY' | translate }}</label>
+        <select name="selectLibrary" id="selectLibrary" ng-options="option.name for option in vm.libOptions.library track by option.id" ng-model="vm.libOptions.selectedLibrary" ng-change="vm.saveLibrary()" class="form-control"></select>
+      </div>
+    </div>
+  </div>
 
-<p id="1"></p>
+  <div class="row" ng-show="vm.ready" ng-cloak>
 
-<p id="2"></p>
+    <div class="col-centered col-md-6" ng-repeat="room in vm.alexaDevices">
 
-<p id="3"></p>
+      <div class="box skin-box box-primary">
 
-<p id="4"></p>
+        <div class="box-header with-border">
+          <h3 class="box-title">{{room.name}}</h3>
+        </div>
+        <div class="box-body table-responsive">
 
-<p id="5"></p>
-
-<p id="6"></p>
-
-<script>
-function myFunction() {
-  var str = "2019067171248090";
-  document.getElementById("1").innerHTML = str.substring(0, 4);
-  document.getElementById("2").innerHTML = str.substring(4, 7);
-  document.getElementById("3").innerHTML = str.substring(7, 9);
-  document.getElementById("4").innerHTML = str.substring(9, 11);
-  document.getElementById("5").innerHTML = str.substring(11, 13);
-  document.getElementById("6").innerHTML = str.substring(13, 16);
-}
-</script>
-
-</body>
-</html>
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>
+                  {{ 'DEVICE' | translate }}
+                </th>
+                <th>
+                  {{ 'DEVICETYPE' | translate }}
+                </th>
+                <th>
+                  {{ 'ALEXA_ACTIF' | translate }}
+                </th>
+                <th>
+                  {{ 'ALEXA_NAME' | translate }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-show="{{type.type == 'binary' && type.type.length}}" ng-repeat="type in room.deviceTypes" class="ng-cloak">
+                <td style="vertical-align: middle">{{type.name}}</td>
+                <td style="vertical-align: middle">{{type.deviceTypeName}}</td>
+                <td style="text-align:center;vertical-align: middle">
+                  <input type="checkbox" class="minimal" ng-model="type.alexa">
+                </td>
+                <td><input type="text" placeholder="Nom pour Alexa" class="form-control" ng-model="type.friendlyName" ng-disabled="type.alexa == false" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- box-->
+    </div>
+  </div>
+  <!-- row -->
+  <div class="modal fade alexa-help" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span></button>
+          <h5 class="modal-title">{{ 'ALEXA_TEXT_1' | translate }}</h5>
+        </div>
+        <div class="modal-body">
+          <div>
+            {{ 'ALEXA_TEXT_2' | translate }}<br />
+            {{ 'ALEXA_TEXT_3' | translate }}<br />
+            {{ 'ALEXA_TEXT_4' | translate }}<br />
+            {{ 'ALEXA_TEXT_5' | translate }}<br />
+            {{ 'ALEXA_TEXT_6' | translate }}
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-flat" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

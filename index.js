@@ -10,8 +10,8 @@ module.exports = function (sails) {
     });
     
     return {
-        json,
-        exec,
-        AutoWakeUp,
+        json : json,
+        exec : exec,
+        AutoWakeUp : AutoWakeUp,
     };
 };

@@ -2,6 +2,7 @@ module.exports = function (sails) {
 
 	var init = require('./lib/init.js');
     var exec = require('./lib/API/exec.js');
+    var geocoding = require('./lib/API/geocoding.js');
     var json = require('./lib/json.js');
     var AutoWakeUp = require('./lib/API/AutoWakeUp.js');
 
@@ -10,8 +11,9 @@ module.exports = function (sails) {
     });
     
     return {
-        json : json,
-        exec : exec,
-        AutoWakeUp : AutoWakeUp,
+        json,
+        exec,
+        geocoding,
+        AutoWakeUp
     };
 };
